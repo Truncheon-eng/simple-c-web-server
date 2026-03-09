@@ -23,7 +23,7 @@ void _start(void) {
         _error(SOCKET_ERR, exit);
     
     // setting socket options
-    int option;
+    int option = 1;
     int opt_res = setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option));
     if(opt_res == INVALID_SETSECKOPT)
         _error(SETSECKOPT_ERR, close_server);
